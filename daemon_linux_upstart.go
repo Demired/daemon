@@ -6,7 +6,6 @@ package daemon
 
 import (
 	"os"
-	"fmt"
 	"os/exec"
 	"regexp"
 	"strings"
@@ -54,7 +53,6 @@ func (linux *upstartRecord) checkRunning() (string, bool) {
 
 // Install the service
 func (linux *upstartRecord) Install(args ...string) (string, error) {
-	fmt.Println("linux_upstart")
 	installAction := "Install " + linux.description + ":"
 
 	if ok, err := checkPrivileges(); !ok {
