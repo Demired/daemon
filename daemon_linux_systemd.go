@@ -5,7 +5,6 @@
 package daemon
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 	"regexp"
@@ -54,7 +53,6 @@ func (linux *systemDRecord) checkRunning() (string, bool) {
 
 // Install the service
 func (linux *systemDRecord) Install(args ...string) (string, error) {
-	fmt.Println("linux_systemd")
 	installAction := "Install " + linux.description + ":"
 
 	if ok, err := checkPrivileges(); !ok {
